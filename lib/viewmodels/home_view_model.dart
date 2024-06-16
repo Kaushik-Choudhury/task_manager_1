@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-
-class Task {
-  String id;
-  String title;
-  bool isCompleted;
-
-  Task({required this.id, required this.title, this.isCompleted = false});
-}
+import '../models/task.dart';
 
 class HomeViewModel extends ChangeNotifier {
-  List<Task> tasks = [];
+  List<Task> _tasks = [];
+  List<Task> _filteredTasks = [];
 
-  void addTask(String title) {
-    final newTask = Task(id: DateTime.now().toString(), title: title);
-    tasks.add(newTask);
+  List<Task> get tasks => _filteredTasks.isEmpty ? _tasks : _filteredTasks;
+
+  void addTask(Task task) {
+    _tasks.add(task);
     notifyListeners();
   }
 
@@ -23,7 +18,24 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   void deleteTask(String id) {
-    tasks.removeWhere((task) => task.id == id);
+    _tasks.removeWhere((task) => task.id == id);
+    notifyListeners();
+  }
+
+  void updateTask(Task updatedTask) {
+    int index = _tasks.indexWhere((task) => task.id == updatedTask.id);
+    if (index != -1) {
+      _tasks[index] = updatedTask;
+      notifyListeners();
+    }
+  }
+
+  void filterTasks(String query) {
+    if (query.isEmpty) {
+      _filteredTasks = [];
+    } else {
+      _filteredTasks = _tasks.where((task) => task.title.contains(query)).toList();
+    }
     notifyListeners();
   }
 }

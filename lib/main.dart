@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Task Manager',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+          primarySwatch: Colors.blueGrey,
         ),
         home: HomeView(),
       ),
