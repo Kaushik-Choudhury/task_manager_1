@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         title: 'Task Manager',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: HomeView(),
       ),
