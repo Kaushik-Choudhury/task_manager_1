@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'views/home_views.dart';
 import 'viewmodels/home_view_model.dart';
+import 'utils/custom_styles.dart';
+import 'utils/custom_colors.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +19,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Task Manager',
         theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
+          brightness: Brightness.dark,
+          primarySwatch: Colors.deepPurple,
+          colorScheme: ColorScheme.dark(
+            secondary: CustomColors.accentPurple,
+          ),
+          textTheme: TextTheme(
+            headlineLarge: CustomStyles.appBarTitle,
+            bodyLarge: CustomStyles.bodyText,
+          ),
         ),
         home: HomeView(),
       ),

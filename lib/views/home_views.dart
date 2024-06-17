@@ -5,8 +5,7 @@ import '../widgets/task_tile.dart';
 import '../widgets/task_form.dart';
 import '../widgets/search_bar.dart';
 import '../utils/custom_styles.dart';
-import '../models/task.dart';
-
+import '../utils/custom_colors.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -14,6 +13,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Task Manager', style: CustomStyles.appBarTitle),
+        backgroundColor: CustomColors.darkBackground,
       ),
       body: Column(
         children: <Widget>[
@@ -44,6 +44,7 @@ class HomeView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddTaskDialog(context),
         child: Icon(Icons.add),
+        backgroundColor: CustomColors.accentPurple,
       ),
     );
   }
@@ -57,7 +58,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  void _showEditTaskDialog(BuildContext context, Task task) {
+  void _showEditTaskDialog(BuildContext context, task) {
     showDialog(
       context: context,
       builder: (context) {

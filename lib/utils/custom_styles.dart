@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
+import 'custom_colors.dart';
 
 class CustomStyles {
-  static const TextStyle appBarTitle = const TextStyle(
+  static const TextStyle appBarTitle = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
 
-  static const TextStyle taskTitle = const TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
+  static const TextStyle bodyText = TextStyle(
+    fontSize: 16,
+    color: Colors.white70,
   );
 
-  static const TextStyle taskCompletedTitle = const TextStyle(
+  static const TextStyle taskTitle = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.bold,
-    decoration: TextDecoration.lineThrough,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
   );
 
-  static const TextStyle taskSubtitle = const TextStyle(
+  static const TextStyle taskSubtitle = TextStyle(
     fontSize: 14,
-    color: Colors.grey,
+    color: Colors.white60,
   );
 }

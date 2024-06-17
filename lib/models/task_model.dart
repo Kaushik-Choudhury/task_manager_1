@@ -2,18 +2,18 @@ class Task {
   String id;
   String title;
   String description;
-  String category;
   bool isCompleted;
   DateTime dueDate;
-  String priority; // Low, Medium, High
+  String assignedTo;
+  String priority;
 
   Task({
     required this.id,
     required this.title,
-    this.description = '',
-    this.category = 'General',
+    required this.description,
     this.isCompleted = false,
     required this.dueDate,
-    this.priority = 'Medium',
+    required this.assignedTo,
+    required this.priority,
   });
 }
